@@ -111,7 +111,7 @@ export default function RootLayout({
         >
           <MenuProvider>
             <Header />
-            <main className="overflow-hidden rounded-3xl">
+            <main className="overflow-hidden rounded-xl">
               <DropdownMenu />
               {children}
             </main>
