@@ -3,6 +3,7 @@
 import { useMenu } from '@/contexts/MenuContext';
 import { motion } from 'framer-motion';
 import React, { useEffect } from 'react';
+import { Footer } from './footer';
 
 const DropdownMenu = () => {
   const { isOpen, toggleOpen } = useMenu();
@@ -35,14 +36,40 @@ const DropdownMenu = () => {
     },
   };
 
+  const dropdown = {
+    open: {
+      opacity: 1,
+      transition: {
+        duration: 0.75,
+        ease: 'easeInOut',
+      },
+    },
+    closed: {
+      opacity: 0,
+      transition: {
+        duration: 0.75,
+        ease: 'easeInOut',
+      },
+    },
+  };
+
   return (
     <motion.div
-      className=" bg-[#121011] dark:bg-[#edefee]"
+      className=" bg-[#121011] text-slate-100 dark:bg-[#edefee]"
       initial="closed"
       animate={isOpen ? 'open' : 'closed'}
       variants={variants}
     >
-      <div className="flex flex-col">Dropdown Menu Content</div>
+      <motion.div
+        variants={dropdown}
+        className="flex flex-col md:flex-row justify-between"
+      >
+        <motion.div className="flex flex-col">flex</motion.div>
+        <motion.div className="flex w-full bg-yellow-400 flex-col">
+          <h1 className="hidden md:block ">flex data here</h1>
+          <Footer />
+        </motion.div>
+      </motion.div>
     </motion.div>
   );
 };

@@ -25,13 +25,13 @@ export const MenuToggle = ({ toggle }: { toggle: () => void }) => (
       <Path
         className="forground"
         variants={{
-          closed: { d: 'M 10 20 L 46 20' },
+          closed: { d: 'M 10 21 L 46 21' },
           open: { d: 'M 24 10 L 24 38' },
         }}
       />
       <Path
         variants={{
-          closed: { d: 'M 2 28 L 40 28' },
+          closed: { d: 'M 2 27 L 40 27' },
           open: { d: 'M 10 24 L 38 24' },
         }}
       />
