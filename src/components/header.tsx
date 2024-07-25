@@ -13,10 +13,10 @@ const Header = () => {
     <motion.header
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
-      className="header items-center h-18 md:h-20 bg-green-400"
+      className="header items-center h-18 md:h-20"
     >
       <Breadcrumbs />
-      <ModeToggle />
+
       <Navs toggle={() => toggleOpen()} />
     </motion.header>
   );

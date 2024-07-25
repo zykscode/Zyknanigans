@@ -42,7 +42,7 @@ const DropdownMenu = () => {
       animate={isOpen ? 'open' : 'closed'}
       variants={variants}
     >
-      <div className="p-4">Dropdown Menu Content</div>
+      <div className="flex flex-col">Dropdown Menu Content</div>
     </motion.div>
   );
 };
