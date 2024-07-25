@@ -5,8 +5,12 @@ import Me from '@/public/me.jpg';
 
 function PageLogo() {
   return (
-    <div className="page-icon-inline cursor-pointer page-icon-image">
-      <Image alt="page log logo" src={Me} className="icon page-icon" />
+    <div className="size-12 rounded-full bg-green-200 cursor-pointer ">
+      <Image
+        alt="page logo logo"
+        src={Me}
+        className="size-full rounded-full "
+      />
     </div>
   );
 }
