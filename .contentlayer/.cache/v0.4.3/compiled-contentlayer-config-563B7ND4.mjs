@@ -246,7 +246,7 @@ function createTagCount(allPosts) {
     }
   });
   writeFileSync(
-    "./app/tag-data.json",
+    "./src/app/tag-data.json",
     JSON.stringify(Object.values(tagCount), null, 2)
   );
 }
@@ -373,4 +373,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-YB3GFGZX.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-563B7ND4.mjs.map
