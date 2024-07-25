@@ -19,7 +19,7 @@ const Path = (
 export const MenuToggle = ({ toggle }: { toggle: () => void }) => (
   <button
     onClick={toggle}
-    className=" w-20 flex justify-center items-center bg-transparent rounded-full focus:outline-none"
+    className=" w-16 md:w-20 flex justify-center items-center bg-transparent rounded-full focus:outline-none"
   >
     <svg className="w-full" viewBox="0 0 48 48">
       <Path
