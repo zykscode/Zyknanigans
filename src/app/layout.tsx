@@ -102,7 +102,7 @@ export default function RootLayout({
         href={`${basePath}/feed.xml`}
       />
 
-      <body className={`w-full px-8 flex flex-col ${inter.className}`}>
+      <body className={`w-full px-4 flex flex-col ${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
