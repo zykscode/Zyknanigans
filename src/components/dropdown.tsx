@@ -17,7 +17,7 @@ const DropdownMenu = () => {
 
   const variants = {
     open: {
-      height: 'calc(100vh - 81px)',
+      height: 'calc(100vh - 72px)',
       y: '0',
       opacity: 1,
       transition: {

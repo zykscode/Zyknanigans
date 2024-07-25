@@ -13,7 +13,7 @@ const Header = () => {
     <motion.header
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
-      className="header items-center"
+      className="header items-center h-['72px']"
     >
       <Breadcrumbs />
       <ModeToggle />
