@@ -7,6 +7,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/header';
 import { MenuProvider } from '@/contexts/MenuContext';
 import DropdownMenu from '@/components/dropdown';
+import { WhyteInktrap, cn } from '@/lib/utils';
+import Main from '@/components/main';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -58,7 +60,11 @@ export default function RootLayout({
   const basePath = process.env.BASE_PATH || '';
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={cn(WhyteInktrap.variable)}
+      suppressHydrationWarning
+    >
       <link
         rel="apple-touch-icon"
         sizes="76x76"
@@ -102,7 +108,7 @@ export default function RootLayout({
         href={`${basePath}/feed.xml`}
       />
 
-      <body className={`w-full px-4 flex flex-col ${inter.className}`}>
+      <body className={`w-full px-4font-asapu flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -111,10 +117,11 @@ export default function RootLayout({
         >
           <MenuProvider>
             <Header />
-            <main className="overflow-hidden rounded-xl">
+
+            <div className="overflow-hidden why rounded-xl">
               <DropdownMenu />
-              {children}
-            </main>
+              <Main>{children}</Main>
+            </div>
             <Footer />
           </MenuProvider>
         </ThemeProvider>
