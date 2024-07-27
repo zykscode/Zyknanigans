@@ -6027,7 +6027,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                                              
+  --tw-drop-shadow:                                                                                    
 ;
 }
 
@@ -7597,18 +7597,18 @@ a.breadcrumb:hover {
   padding-right: 2vw;
   position: absolute;
   top: auto;
-  bottom: -0vw;
+  bottom: 2vw;
   left: 0%;
   right: 0%;
 }
 
 .nf-disc {
   color: #6a6a6a;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
-  padding-bottom: 0.4vw;
-  /* font-size: 3vw;
-  line-height: 2.5vw; */
+  padding-bottom: 0.5vw;
+  font-size: 3.4vw;
+  line-height: 3vw;
 }
 
 .not-found {
@@ -7687,7 +7687,6 @@ a.breadcrumb:hover {
   z-index: -1;
   position: absolute;
   top: auto;
-  bottom: 2.3vw;
   left: auto;
   right: -4.1vw;
 }

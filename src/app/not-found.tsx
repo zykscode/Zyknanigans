@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="flex-grow">
+    <div className="w-full h-full">
       <div className="content black _404">
         <div className="">
           <div className="l-grid nf">
@@ -56,9 +56,7 @@ export default function NotFound() {
               </div>
             </div>
             <div className="waypoint nf">
-              <div className="nf-disc">
-                like you're lost. Don't worry. You can head over to
-              </div>
+              <div className="nf-disc">follow me here</div>
             </div>
             <div className="waypoint nf">
               <div className="nf-disc">
@@ -81,7 +79,7 @@ export default function NotFound() {
               <h2 className="">Found</h2>
             </div>
           </div>
-          <div className="nf-head__wrap opacity-30 text-[#d32d08]">
+          <div className="nf-head__wrap opacity-40 bottom-[4.5vw] md:bottom-[1.75vw]   text-[#d32d08]">
             <div className="waypoint">
               <h1 className="nf-head text-[40vw] md:text-[30vw]">404</h1>
             </div>
