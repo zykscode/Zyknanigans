@@ -6027,7 +6027,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                  
+  --tw-drop-shadow:                                                   
 ;
 }
 
@@ -7571,7 +7571,6 @@ a.breadcrumb:hover {
 
 .waypoint {
   display: inline-block;
-  overflow: hidden;
 }
 
 .waypoint.nf {
