@@ -9,7 +9,7 @@ export default function NotFound() {
 
   return (
     <div className="w-full h-full -mt-10">
-      <div className="content black _404">
+      <div className="content _404">
         <div className="">
           <div className="l-grid nf">
             <div
