@@ -108,7 +108,7 @@ export default function RootLayout({
         href={`${basePath}/feed.xml`}
       />
 
-      <body className={`w-full flex flex-col px-4 min-h-screen`}>
+      <body className={`min-h-screen`}>
         <MenuProvider>{children}</MenuProvider>
       </body>
     </html>

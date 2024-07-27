@@ -61,7 +61,7 @@ export default function NotFound() {
             </div>
 
             <div className="waypoint nf">
-              <div className="nf-disc">
+              <div className="nf-disc z-30">
                 click here for{' '}
                 <Link
                   href="/"
