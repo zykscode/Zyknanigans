@@ -7594,7 +7594,6 @@ a.breadcrumb:hover {
 .nf-desc {
   width: 100%;
   padding-left: 2vw;
-  padding-right: 2vw;
   position: absolute;
   top: auto;
   bottom: 2vw;
@@ -7608,7 +7607,7 @@ a.breadcrumb:hover {
   text-transform: uppercase;
   padding-bottom: 0.5vw;
   font-size: 3.4vw;
-  line-height: 3vw;
+  line-height: 2.5vw;
 }
 
 .not-found {

@@ -1,6 +1,12 @@
+import { author, github } from '@/data/siteMetadata';
 import Link from 'next/link';
+import styles from '@/components/styles.module.css';
+import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { siteConfig } from '@/config/site';
 
 export default function NotFound() {
+  const { twitter, github, youtube } = siteConfig.links;
+
   return (
     <div className="w-full h-full">
       <div className="content black _404">
@@ -49,25 +55,72 @@ export default function NotFound() {
               </div>
             </div>
           </div>
-          <div className="nf-desc text-[4vw] leading-[3vw]">
+          <div className="nf-desc  text-[4vw] leading-[3vw]">
             <div className="waypoint nf">
-              <div className="nf-disc">
-                You look lost, no qualms, i dey here with you
-              </div>
+              <div className="nf-disc">You look lost, no qualms.</div>
             </div>
-            <div className="waypoint nf">
-              <div className="nf-disc">follow me here</div>
-            </div>
+
             <div className="waypoint nf">
               <div className="nf-disc">
                 click here for{' '}
-                <Link href="/" className="link under  text-[#f8f6f3]">
+                <Link
+                  href="/"
+                  className="link cursor-pointer under  text-[#f8f6f3]"
+                >
                   Homepage
                 </Link>{' '}
                 or to the{' '}
-                <Link href="/agenda" className="link under  text-[#d5d0ca]">
+                <Link
+                  href="/agenda"
+                  className="link cursor-pointer under  text-[#d5d0ca]"
+                >
                   Agenda
                 </Link>
+              </div>
+            </div>
+
+            <div className="waypoint nf">
+              <div className="nf-disc">
+                are you Still Lost? them follow me here{' '}
+              </div>
+            </div>
+            <div className="waypoint nf">
+              <div className="nf-disc">
+                <div className="block-inline flex gap-2">
+                  {twitter && (
+                    <a
+                      className={styles.twitter}
+                      href={`https://twitter.com/${twitter}`}
+                      title={`Twitter @${twitter}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaTwitter />
+                    </a>
+                  )}
+                  {github && (
+                    <a
+                      className={styles.github}
+                      href={`https://github.com/${github}`}
+                      title={`GitHub @${github}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaGithub />
+                    </a>
+                  )}
+                  {youtube && (
+                    <a
+                      className={styles.youtube}
+                      href={`https://www.youtube.com/${youtube}`}
+                      title={`YouTube ${author}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaYoutube />
+                    </a>
+                  )}{' '}
+                </div>
               </div>
             </div>
           </div>
