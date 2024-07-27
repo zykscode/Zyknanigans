@@ -17,7 +17,7 @@ export default function NotFound() {
               className="l-grid__wrap"
             >
               <div className="l-grid__item">
-                <div className="text white disc bold">Not Found</div>
+                <div className="text disc bold">Not Found</div>
               </div>
             </div>
             <div
@@ -72,7 +72,7 @@ export default function NotFound() {
                 or to the{' '}
                 <Link
                   href="/agenda"
-                  className="link cursor-pointer under  text-[#d5d0ca]"
+                  className="link cursor-pointer under  text-[#f8f6f3]"
                 >
                   Agenda
                 </Link>
@@ -124,7 +124,7 @@ export default function NotFound() {
               </div>
             </div>
           </div>
-          <div className="nf-box leading-[16vw] md:leading-[9vw] uppercase text-[20vw] md:text-[12vw]  text-[#d5d0ca]">
+          <div className="nf-box leading-[16vw] md:leading-[9vw] uppercase text-[20vw] md:text-[12vw]  text-[#090805]">
             <div className="waypoint">
               <h2 className="">Not</h2>
             </div>

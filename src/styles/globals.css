@@ -1656,7 +1656,6 @@ svg.page-icon {
 }
 
 .link {
-  color: inherit;
   word-break: break-word;
   text-decoration: inherit;
   border-color: var(--fg-color-2);
@@ -6027,7 +6026,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                                                    
+  --tw-drop-shadow:                                                                                     
 ;
 }
 
