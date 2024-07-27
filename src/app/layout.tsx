@@ -109,14 +109,7 @@ export default function RootLayout({
       />
 
       <body className={`w-full flex flex-col px-4 min-h-screen`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <MenuProvider>{children}</MenuProvider>
-        </ThemeProvider>
+        <MenuProvider>{children}</MenuProvider>
       </body>
     </html>
   );

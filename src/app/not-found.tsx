@@ -4,8 +4,8 @@ export default function NotFound() {
   return (
     <div className="h-screenflex-grow">
       <div className="content black _404">
-        <div className="not-found">
-          <div className="l-grid nf">
+        <div className="">
+          {/* <div className="l-grid nf">
             <div
               id="w-node-_8c71e47f-157a-18c6-7712-cf3346389672-318be605"
               className="l-grid__wrap"
@@ -78,18 +78,18 @@ export default function NotFound() {
                 had enough. A lab to experiment in, for sure.
               </div>
             </div>
-          </div>
-          <div className="nf-box">
+          </div> */}
+          <div className="nf-box leading-[16vw] md:leading-[9vw] uppercase text-[20vw] md:text-[12vw]  text-[#d5d0ca]">
             <div className="waypoint">
-              <h2 className="nf-h2">Not</h2>
+              <h2 className="">Not</h2>
             </div>
             <div className="waypoint">
-              <h2 className="nf-h2">Found</h2>
+              <h2 className="">Found</h2>
             </div>
           </div>
-          <div className="nf-head__wrap">
+          <div className="nf-head__wrap text-[#464343]">
             <div className="waypoint">
-              <h1 className="nf-head">404</h1>
+              <h1 className="nf-head text-[40vw] md:text-[30vw]">404</h1>
             </div>
           </div>
         </div>
