@@ -8,7 +8,7 @@ export default function NotFound() {
   const { twitter, github, youtube } = siteConfig.links;
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full -mt-10">
       <div className="content black _404">
         <div className="">
           <div className="l-grid nf">
