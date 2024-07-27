@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="h-screenflex-grow">
+    <div className="flex-grow">
       <div className="content black _404">
         <div className="">
-          {/* <div className="l-grid nf">
+          <div className="l-grid nf">
             <div
               id="w-node-_8c71e47f-157a-18c6-7712-cf3346389672-318be605"
               className="l-grid__wrap"
@@ -49,10 +49,10 @@ export default function NotFound() {
               </div>
             </div>
           </div>
-          <div className="nf-desc">
+          <div className="nf-desc text-[4vw] leading-[3vw]">
             <div className="waypoint nf">
               <div className="nf-disc">
-                You didn't destroy any injection moulds, but it looks
+                You look lost, no qualms, i dey here with you
               </div>
             </div>
             <div className="waypoint nf">
@@ -62,23 +62,17 @@ export default function NotFound() {
             </div>
             <div className="waypoint nf">
               <div className="nf-disc">
-                the{' '}
-                <a href="/" className="link under">
+                click here for{' '}
+                <Link href="/" className="link under  text-[#f8f6f3]">
                   Homepage
-                </a>{' '}
-                or to the
-                <a href="/services" className="link under">
-                  Services
-                </a>{' '}
-                page if you haven't
+                </Link>{' '}
+                or to the{' '}
+                <Link href="/agenda" className="link under  text-[#d5d0ca]">
+                  Agenda
+                </Link>
               </div>
             </div>
-            <div className="waypoint nf">
-              <div className="nf-disc">
-                had enough. A lab to experiment in, for sure.
-              </div>
-            </div>
-          </div> */}
+          </div>
           <div className="nf-box leading-[16vw] md:leading-[9vw] uppercase text-[20vw] md:text-[12vw]  text-[#d5d0ca]">
             <div className="waypoint">
               <h2 className="">Not</h2>

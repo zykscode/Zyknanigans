@@ -6027,7 +6027,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                                   
+  --tw-drop-shadow:                                                                              
 ;
 }
 
@@ -7574,7 +7574,7 @@ a.breadcrumb:hover {
 }
 
 .waypoint.nf {
-  margin-bottom: -0.7vw;
+  margin-bottom: -0.6vw;
   position: relative;
 }
 
@@ -7597,18 +7597,18 @@ a.breadcrumb:hover {
   padding-right: 2vw;
   position: absolute;
   top: auto;
-  bottom: 2vw;
+  bottom: -0vw;
   left: 0%;
   right: 0%;
 }
 
 .nf-disc {
   color: #6a6a6a;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  padding-bottom: 0.5vw;
-  font-size: 3.4vw;
-  line-height: 3vw;
+  padding-bottom: 0.4vw;
+  /* font-size: 3vw;
+  line-height: 2.5vw; */
 }
 
 .not-found {
