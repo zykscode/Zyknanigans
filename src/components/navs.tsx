@@ -3,12 +3,12 @@
 import Link from 'next/link';
 import React from 'react';
 import { MenuToggle } from './MenuToggle';
-import { motion } from 'framer-motion';
 import { navs } from '@/data/headerNavLinks';
+import { motion } from 'framer-motion';
 
 const variants = {
   open: (i) => ({
-    y: '100%',
+    x: '100%',
     opacity: 0,
     transition: {
       delay: i * 0.7,
@@ -16,7 +16,7 @@ const variants = {
     },
   }),
   closed: {
-    y: '0',
+    x: '0',
     opacity: 0.8,
     transition: {
       duration: 0.7,
@@ -26,15 +26,24 @@ const variants = {
 
 const Navs = ({ toggle }) => {
   return (
-    <nav className=" text-md uppercase w-1/2 justify-between breadcrumbs">
+    <nav className="text-md uppercase w-1/2 justify-between breadcrumbs">
       <div className="flex w-full justify-evenly">
         {navs.map((nav, i) => {
           return (
-            <motion.span custom={i} variants={variants} key={nav}>
-              <Link className="hidden md:block button" href={`/${nav}`}>
+            <motion.div
+              custom={i}
+              variants={variants}
+              className="relative group"
+              key={nav}
+            >
+              <Link
+                className="hidden md:block button relative"
+                href={`/${nav}`}
+              >
                 {nav}
+                <span className="absolute bottom-0 left-0 h-[2px] bg-black w-0 transform origin-left transition-all duration-300 group-hover:w-full"></span>
               </Link>
-            </motion.span>
+            </motion.div>
           );
         })}
       </div>

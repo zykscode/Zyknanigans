@@ -12,7 +12,7 @@ const Page = ({ children, ...props }: any) => {
   const posts = allCoreContent(sortedPosts);
 
   return (
-    <section className="flex min-h-screen flex-col">
+    <section className="flex px-4 min-h-screen flex-col">
       <Header />
       <div className="overflow-hidden flex-grow flex-col flex bg-yellow-300 rounded-xl">
         <DropdownMenu />
