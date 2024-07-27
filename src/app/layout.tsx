@@ -108,22 +108,14 @@ export default function RootLayout({
         href={`${basePath}/feed.xml`}
       />
 
-      <body className={`w-full px-4font-asapu flex flex-col`}>
+      <body className={`w-full px-4 min-h-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <MenuProvider>
-            <Header />
-
-            <div className="overflow-hidden why rounded-xl">
-              <DropdownMenu />
-              <Main>{children}</Main>
-            </div>
-            <Footer />
-          </MenuProvider>
+          <MenuProvider>{children}</MenuProvider>
         </ThemeProvider>
       </body>
     </html>
