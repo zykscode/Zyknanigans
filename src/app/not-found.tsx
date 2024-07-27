@@ -87,7 +87,7 @@ export default function NotFound() {
               <h2 className="">Found</h2>
             </div>
           </div>
-          <div className="nf-head__wrap text-[#464343]">
+          <div className="nf-head__wrap opacity-30 text-[#d32d08]">
             <div className="waypoint">
               <h1 className="nf-head text-[40vw] md:text-[30vw]">404</h1>
             </div>
