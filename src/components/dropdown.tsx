@@ -94,7 +94,7 @@ const DropdownMenu = () => {
 
   return (
     <motion.div
-      className="bg-[#121011] text-slate-100 text-7xl capitalize dark:bg-[#edefee]"
+      className="bg-[#121011] text-slate-100 text-5xl capitalize dark:bg-[#edefee]"
       initial="closed"
       animate={isOpen ? 'open' : 'closed'}
       variants={containerVariants}
@@ -108,7 +108,7 @@ const DropdownMenu = () => {
             <motion.div
               key={nav}
               variants={navItemVariants}
-              className="relative"
+              className="relative bg-green-300"
             >
               <Link className="button flex items-center" href={`/${nav}`}>
                 <span className="text-2xl mr-4">{toRoman(i + 1)}</span>
