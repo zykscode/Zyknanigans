@@ -1655,6 +1655,20 @@ svg.page-icon {
   margin: 2em 0;
 }
 
+.underline {
+  display: none;
+}
+
+.w-embed:before,
+.w-embed:after {
+  content: ' ';
+  grid-area: 1/1/2/2;
+  display: table;
+}
+
+.w-embed:after {
+  clear: both;
+}
 .link {
   word-break: break-word;
   text-decoration: inherit;
@@ -6026,7 +6040,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                                                     
+  --tw-drop-shadow:                                                                                      
 ;
 }
 

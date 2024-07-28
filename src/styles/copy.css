@@ -499,17 +499,6 @@ ol {
   list-style: none;
 }
 
-.w-embed:before,
-.w-embed:after {
-  content: ' ';
-  grid-area: 1/1/2/2;
-  display: table;
-}
-
-.w-embed:after {
-  clear: both;
-}
-
 .w-video {
   width: 100%;
   padding: 0;
@@ -2614,10 +2603,6 @@ a {
 
 .nav-logo.lo {
   position: relative;
-}
-
-.underline {
-  display: none;
 }
 
 .menu {

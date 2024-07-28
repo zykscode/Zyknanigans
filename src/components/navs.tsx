@@ -5,6 +5,7 @@ import React from 'react';
 import { MenuToggle } from './MenuToggle';
 import { navs } from '@/data/headerNavLinks';
 import { motion } from 'framer-motion';
+import NavLink from './nav-links';
 
 const variants = {
   open: (i) => ({
@@ -29,22 +30,7 @@ const Navs = ({ toggle }) => {
     <nav className="text-md uppercase w-1/2 justify-between breadcrumbs">
       <div className="flex w-full justify-evenly">
         {navs.map((nav, i) => {
-          return (
-            <motion.div
-              custom={i}
-              variants={variants}
-              className="relative group"
-              key={nav}
-            >
-              <Link
-                className="hidden md:block button relative"
-                href={`/${nav}`}
-              >
-                {nav}
-                <span className="absolute bottom-0 left-0 h-[2px] bg-black w-0 transform origin-left transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </motion.div>
-          );
+          return <NavLink text={nav} i={i} key={nav} />;
         })}
       </div>
       <MenuToggle toggle={toggle} />
