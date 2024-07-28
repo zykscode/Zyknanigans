@@ -121,8 +121,8 @@ const DropdownMenu = () => {
             </motion.div>
           ))}
         </motion.div>
-        <motion.div className="flex w-full flex-col">
-          <h1 className="hidden md:block">flex data here</h1>
+        <motion.div className="md:flex w-full hidden flex-col">
+          <h1 className="">flex data here</h1>
           <Footer />
         </motion.div>
       </motion.div>
