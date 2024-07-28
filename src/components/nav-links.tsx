@@ -7,8 +7,8 @@ const variants = {
     x: '100%',
     opacity: 0,
     transition: {
-      delay: i * 0.1,
-      duration: 0.5,
+      delay: i * 0.05,
+      duration: 0.4,
     },
   }),
   closed: {
@@ -25,12 +25,12 @@ const NavLink = ({ text, i }) => {
     <motion.div
       custom={i}
       variants={variants}
-      className="relative inline-block py-6 group"
+      className="relative hidden lg:inline-block py-6 group"
       key={text}
     >
-      <Link href={`/${text.toLowerCase()}`} className="relative text-gray-900">
-        <span className="relative z-10">{text}</span>
-        <span className="absolute w-full h-px bg-gray-900 left-0 bottom-0 scale-x-0 origin-right transition-transform duration-350 ease-out group-hover:scale-x-100 group-hover:origin-left lg:top-6"></span>
+      <Link href={`/${text.toLowerCase()}`} className="relative">
+        <span className="relative z-10 nav-link">{text}</span>
+        <span className="absolute w-full h-px bg-[#151515] left-0 scale-x-0 origin-right transition-transform duration-350 ease-out group-hover:scale-x-100 group-hover:origin-left lg:top-3"></span>
       </Link>
     </motion.div>
   );

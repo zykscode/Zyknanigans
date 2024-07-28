@@ -1659,6 +1659,12 @@ svg.page-icon {
   display: none;
 }
 
+.nav-link {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
 .w-embed:before,
 .w-embed:after {
   content: ' ';
@@ -6040,7 +6046,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                                                      
+  --tw-drop-shadow:                                                                                       
 ;
 }
 
