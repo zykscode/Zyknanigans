@@ -3,7 +3,7 @@ import { allPosts } from 'contentlayer/generated';
 import Wrapper from '@/components/wrapper';
 import BlogPostScroll from '@/components/post-scroll';
 import Me from '@/public/me.jpg';
-const Page = ({ children, ...props }: any) => {
+const Page = ({ children, ...props }) => {
   const sortedPosts = sortPosts(allPosts);
   const posts = allCoreContent(sortedPosts);
 
@@ -11,7 +11,7 @@ const Page = ({ children, ...props }: any) => {
 
   return (
     <Wrapper>
-      <BlogPostScroll posts={posts} image={Me} />
+      <BlogPostScroll posts={posts} />
     </Wrapper>
   );
 };
