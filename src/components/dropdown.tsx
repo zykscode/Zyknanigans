@@ -119,9 +119,14 @@ const DropdownMenu = () => {
                 variants={underlineVariants}
               />
               <motion.div variants={navItemVariants}>
-                <Link className="button flex items-center" href={`/${nav}`}>
+                <Link
+                  className="button font-semibold flex items-center"
+                  href={`/${nav}`}
+                >
                   <span>{nav}</span>
-                  <span className="text-2xl ml-4">{toRoman(i + 1)}</span>
+                  <span className="text-2xl text-[rgba(213,208,202,0.2)] ml-3 ">
+                    {toRoman(i + 1)}
+                  </span>
                 </Link>
               </motion.div>
             </motion.div>
