@@ -17,7 +17,7 @@ const Main = ({ children, ...props }: any) => {
     closed: {
       opacity: 1,
       transition: {
-        delay: '0.75',
+        delay: 0.75,
       },
     },
   };
