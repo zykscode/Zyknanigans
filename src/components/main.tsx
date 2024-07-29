@@ -2,7 +2,7 @@
 
 import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer';
 import { allPosts } from 'contentlayer/generated';
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 import { useMenu } from '@/contexts/MenuContext';
 
 const Main = ({ children, ...props }: any) => {
@@ -12,11 +12,13 @@ const Main = ({ children, ...props }: any) => {
 
   const variants = {
     open: {
-      y: '0',
       opacity: 0,
     },
     closed: {
       opacity: 1,
+      transition: {
+        delay: '0.75',
+      },
     },
   };
 

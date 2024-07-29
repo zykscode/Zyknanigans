@@ -1,25 +1,15 @@
 import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer';
 import { allPosts } from 'contentlayer/generated';
-import { motion } from 'framer-motion';
-import { useMenu } from '@/contexts/MenuContext';
-import Header from '@/components/header';
-import DropdownMenu from '@/components/dropdown';
-import { Footer } from '@/components/footer';
-import Main from '@/components/main';
+import Wrapper from '@/components/wrapper';
 
 const Page = ({ children, ...props }: any) => {
   const sortedPosts = sortPosts(allPosts);
   const posts = allCoreContent(sortedPosts);
 
   return (
-    <section className="flex px-4 min-h-screen flex-col">
-      <Header />
-      <div className="overflow-hidden  flex-col flex rounded-xl">
-        <DropdownMenu />
-        <Main>{children}</Main>
-      </div>
-      <Footer />
-    </section>
+    <Wrapper>
+      <h1>hello</h1>
+    </Wrapper>
   );
 };
 
