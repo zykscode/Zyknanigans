@@ -157,9 +157,7 @@
     --brownBackgroundCo: rgba(67, 64, 64, 0.3);
     --grayBackgroundCo: rgba(69, 75, 78, 0.3);
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -170,7 +168,7 @@
 
 @layer utilities {
   .menu-title {
-    @apply text-[var(--light-grey)] pt-4 pb-8 pr-[1vw] text-[11vh] leading-[11vh];
+    @apply text-[#d5d0ca] pt-4 pb-8 pr-[1vw] text-[11vh] leading-[11vh];
   }
   @media (max-width: 991px) {
     .menu-title {
@@ -180,6 +178,19 @@
   @media (max-width: 479px) {
     .menu-title {
       @apply pb-8 text-[13vw] leading-[9vw];
+    }
+  }
+  .menu-index {
+    @apply text-[rgba(213, 208, 202, .6)] text-base leading-none inline-block relative bottom-[3.3rem] left-[.2rem];
+  }
+  @media (max-width: 991px) {
+    .menu-index {
+      @apply bottom-[5.4vw] left-[1.9vw];
+    }
+  }
+  @media (max-width: 479px) {
+    .menu-index {
+      @apply bottom-[9.1vw] left-[2.5vw];
     }
   }
 }
@@ -6230,7 +6241,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                                                          
+  --tw-drop-shadow:                                                                                           
 ;
 }
 
