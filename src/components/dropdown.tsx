@@ -1,6 +1,6 @@
 'use client';
 import { useMenu } from '@/contexts/MenuContext';
-import { motion, AnimatePresence, delay } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { Footer } from './footer';
 import { navs } from '@/data/headerNavLinks';
@@ -69,7 +69,6 @@ const DropdownMenu = () => {
       y: 50,
       opacity: 0,
       transition: {
-        delay: 0.5,
         y: { type: 'spring', stiffness: 300, damping: 24 },
         opacity: { duration: 0.2 },
       },
@@ -87,20 +86,8 @@ const DropdownMenu = () => {
     closed: {
       width: '0%',
       transition: {
-        duration: 0.2,
-        ease: 'easeInOut',
-      },
-    },
-  };
-
-  const div = {
-    open: {},
-    closed: {
-      transition: {
         duration: 0.5,
         ease: 'easeInOut',
-        staggerDirection: 1,
-        when: 'afterChildren',
       },
     },
   };
@@ -123,7 +110,7 @@ const DropdownMenu = () => {
       >
         <motion.div className="flex flex-col justify-evenly w-full h-full">
           {navs.map((nav, i) => (
-            <motion.div variants={div} key={nav} className="relative">
+            <motion.div key={nav} className="relative">
               <motion.div
                 className="absolute bottom-0 left-0 h-1 bg-slate-100"
                 variants={underlineVariants}
