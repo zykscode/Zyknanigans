@@ -55,6 +55,16 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+     
+        'custom-light-grey': 'rgba(213, 208, 202, .6)',
+      },
+      inset: {
+        '3.3rem': '3.3rem',
+        '.2rem': '.2rem',
+        '5.4vw': '5.4vw',
+        '1.9vw': '1.9vw',
+        '9.1vw': '9.1vw',
+        '2.5vw': '2.5vw',
       },
       borderRadius: {
         lg: 'var(--radius)',

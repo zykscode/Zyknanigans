@@ -181,7 +181,7 @@
     }
   }
   .menu-index {
-    @apply text-[rgba(213, 208, 202, .6)] text-base leading-none inline-block relative bottom-[3.3rem] left-[.2rem];
+    @apply text-custom-light-grey text-base leading-none inline-block relative bottom-[3.3rem] left-[.2rem];
   }
   @media (max-width: 991px) {
     .menu-index {
@@ -6241,7 +6241,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                                                           
+  --tw-drop-shadow:                                                                                            
 ;
 }
 
