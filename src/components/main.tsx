@@ -8,6 +8,7 @@ import { useMenu } from '@/contexts/MenuContext';
 const Main = ({ children, ...props }: any) => {
   const sortedPosts = sortPosts(allPosts);
   const posts = allCoreContent(sortedPosts);
+
   const { isOpen, toggleOpen } = useMenu();
 
   const variants = {

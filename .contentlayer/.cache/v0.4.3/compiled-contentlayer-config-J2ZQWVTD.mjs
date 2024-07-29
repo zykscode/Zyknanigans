@@ -323,7 +323,7 @@ var Authors = defineDocumentType(() => ({
   computedFields
 }));
 var contentlayer_config_default = makeSource({
-  contentDirPath: "data",
+  contentDirPath: "src/data",
   documentTypes: [Post, Authors],
   mdx: {
     cwd: process.cwd(),
@@ -373,4 +373,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-563B7ND4.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-J2ZQWVTD.mjs.map
