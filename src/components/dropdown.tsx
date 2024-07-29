@@ -1,7 +1,7 @@
 'use client';
 
 import { useMenu } from '@/contexts/MenuContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, delay } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { Footer } from './footer';
 import { navs } from '@/data/headerNavLinks';
@@ -29,8 +29,9 @@ const DropdownMenu = () => {
       y: 'calc(-100%)',
       opacity: 0,
       transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
+        duration: 1,
+        delay: 0.2,
+        ease: 'easeOut',
       },
     },
   };
@@ -50,7 +51,7 @@ const DropdownMenu = () => {
       transition: {
         duration: 0.75,
         ease: 'easeInOut',
-        staggerChildren: 0.05,
+        staggerChildren: 0.02,
         staggerDirection: -1,
         when: 'afterChildren',
       },
