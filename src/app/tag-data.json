@@ -2,7 +2,7 @@
   {
     "name": "AI",
     "count": 2,
-    "color": "orange",
+    "color": "pink",
     "img": "/images/tags/ai.jpg"
   },
   {
@@ -14,25 +14,25 @@
   {
     "name": "OSS",
     "count": 1,
-    "color": "purple",
+    "color": "red",
     "img": "/images/tags/oss.jpg"
   },
   {
     "name": "Twitter",
     "count": 1,
-    "color": "purple",
+    "color": "orange",
     "img": "/images/tags/twitter.jpg"
   },
   {
     "name": "Projects",
     "count": 1,
-    "color": "pink",
+    "color": "purple",
     "img": "/images/tags/projects.jpg"
   },
   {
     "name": "TypeScript",
     "count": 1,
-    "color": "pink",
+    "color": "gray",
     "img": "/images/tags/typescript.jpg"
   }
 ]
