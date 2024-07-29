@@ -6,9 +6,6 @@ import Me from '@/public/me.jpg';
 const Page = ({ children, ...props }: any) => {
   const sortedPosts = sortPosts(allPosts);
   const posts = allCoreContent(sortedPosts);
-
-  console.log(posts[0]);
-
   return (
     <Wrapper>
       <BlogPostScroll posts={posts} />
