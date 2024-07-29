@@ -22,6 +22,7 @@ const DropdownMenu = () => {
       transition: {
         duration: 0.75,
         ease: 'easeInOut',
+        delayChildren: 0.3,
       },
     },
     closed: {
@@ -43,7 +44,7 @@ const DropdownMenu = () => {
         duration: 0.75,
         ease: 'easeInOut',
         staggerChildren: 0.1,
-        delayChildren: 0.3,
+        staggerDirection: 1,
       },
     },
     closed: {
@@ -64,7 +65,7 @@ const DropdownMenu = () => {
       opacity: 1,
       transition: {
         y: { type: 'spring', stiffness: 300, damping: 24 },
-        opacity: { duration: 0.2 },
+        opacity: { duration: 0.3, delay:0.2 },
       },
     },
     closed: {
@@ -115,16 +116,16 @@ const DropdownMenu = () => {
           {navs.map((nav, i) => (
             <motion.div key={nav} className="relative">
               <motion.div
-                className="absolute bg-[rgba(213,208,202,0.2)] h-[1px] bottom-0 left-0 right-0"
+                className="absolute bg-[rgba(213,208,202,0.2)] h-[2px] bottom-0 left-0 right-0"
                 variants={underlineVariants}
               />
               <motion.div variants={navItemVariants}>
                 <Link
-                  className="button font-semibold flex items-center"
+                  className="button menu-title flex items-center"
                   href={`/${nav}`}
                 >
                   <span>{nav}</span>
-                  <span className="md:text-lg text-base text-[rgba(213,208,202,0.2)] ml-3 ">
+                  <span className=" text-[rgba(213,208,202,0.2)] ml-3 ">
                     {toRoman(i + 1)}
                   </span>
                 </Link>

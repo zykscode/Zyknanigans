@@ -7,7 +7,14 @@ module.exports = {
     node: true,
     es6: true,
   },
-  plugins: ['@typescript-eslint'],
+  plugins: [
+    '@typescript-eslint',
+    'jsx-a11y',
+    'prettier',
+    'unused-imports',
+    'simple-import-sort',
+    'no-console',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
@@ -18,8 +25,10 @@ module.exports = {
     'next/core-web-vitals',
   ],
   parserOptions: {
-    project: true,
+    project: './tsconfig.json',
     tsconfigRootDir: __dirname,
+    ecmaVersion: 2020,
+    sourceType: 'module',
   },
   rules: {
     'prettier/prettier': 'error',
@@ -32,11 +41,32 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
-    'react/prop-types': 0,
-    '@typescript-eslint/no-unused-vars': 0,
-    'react/no-unescaped-entities': 0,
+    'react/prop-types': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'react/no-unescaped-entities': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
+    'unused-imports/no-unused-imports-ts': 'error',
+    'unused-imports/no-unused-vars-ts': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
-}
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': ['warn'],
+      },
+    },
+  ],
+};

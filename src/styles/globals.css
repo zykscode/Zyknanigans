@@ -167,6 +167,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .menu-title {
+    @apply text-[var(--light-grey)] pt-4 pb-8 pr-[1vw] text-[11vh] leading-[11vh];
+  }
+  @media (max-width: 991px) {
+    .menu-title {
+      @apply text-[10vw] leading-[8vw];
+    }
+  }
+  @media (max-width: 479px) {
+    .menu-title {
+      @apply pb-8 text-[13vw] leading-[9vw];
+    }
+  }
+}
 /*
 ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
@@ -6214,7 +6230,7 @@ select {
   --tw-invert: ;
   --tw-saturate: ;
   --tw-sepia: ;
-  --tw-drop-shadow:                                                                                        
+  --tw-drop-shadow:                                                                                          
 ;
 }
 

@@ -33,17 +33,17 @@
   "toc": [
     {
       "value": "John Doe",
-      "url": "#john-doe-1",
+      "url": "#john-doe",
       "depth": 1
     },
     {
       "value": "Background",
-      "url": "#background-1",
+      "url": "#background",
       "depth": 2
     },
     {
       "value": "Contact",
-      "url": "#contact-1",
+      "url": "#contact",
       "depth": 2
     }
   ],
