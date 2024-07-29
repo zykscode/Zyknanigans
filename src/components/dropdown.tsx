@@ -29,8 +29,8 @@ const DropdownMenu = () => {
       y: 'calc(-100%)',
       opacity: 0,
       transition: {
-        duration: 1,
-        delay: 0.2,
+        duration: 0.75,
+        delay: 0.01,
         ease: 'easeOut',
       },
     },
