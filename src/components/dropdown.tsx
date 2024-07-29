@@ -69,7 +69,7 @@ const DropdownMenu = () => {
       y: 50,
       opacity: 0,
       transition: {
-        delay: 0.2,
+        delay: 0.5,
         y: { type: 'spring', stiffness: 300, damping: 24 },
         opacity: { duration: 0.2 },
       },
