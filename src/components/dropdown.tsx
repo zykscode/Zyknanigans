@@ -124,7 +124,7 @@ const DropdownMenu = () => {
                   href={`/${nav}`}
                 >
                   <span>{nav}</span>
-                  <span className="text-2xl text-[rgba(213,208,202,0.2)] ml-3 ">
+                  <span className="text-lg text-[rgba(213,208,202,0.2)] ml-3 ">
                     {toRoman(i + 1)}
                   </span>
                 </Link>
