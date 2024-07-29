@@ -1,4 +1,5 @@
 'use client';
+
 import { useMenu } from '@/contexts/MenuContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import React, { useEffect } from 'react';
@@ -26,10 +27,10 @@ const DropdownMenu = () => {
     closed: {
       height: '0',
       y: 'calc(-100%)',
+      opacity: 0,
       transition: {
-        duration: 0.75,
+        duration: 0.5,
         ease: 'easeInOut',
-        when: 'afterChildren',
       },
     },
   };
@@ -41,7 +42,7 @@ const DropdownMenu = () => {
         duration: 0.75,
         ease: 'easeInOut',
         staggerChildren: 0.1,
-        delayChildren: 0.3, // Delay children to allow underline to animate first
+        delayChildren: 0.3,
       },
     },
     closed: {
@@ -71,6 +72,7 @@ const DropdownMenu = () => {
       transition: {
         y: { type: 'spring', stiffness: 300, damping: 24 },
         opacity: { duration: 0.2 },
+        delay: 0.5, // Delay closing to allow underline to animate first
       },
     },
   };
@@ -79,12 +81,12 @@ const DropdownMenu = () => {
     open: {
       width: '100%',
       transition: {
-        duration: 0.5,
+        duration: 0.25,
         ease: 'easeInOut',
       },
     },
     closed: {
-      width: '0%',
+      width: '0%', // Changed from 50% to 0% for full close effect
       transition: {
         duration: 0.5,
         ease: 'easeInOut',
@@ -99,7 +101,7 @@ const DropdownMenu = () => {
 
   return (
     <motion.div
-      className="bg-[#121011]   text-slate-100 text-4xl md:text-7xl capitalize flex-grow   overflow-hidden"
+      className="bg-[#121011] text-slate-100 text-4xl md:text-7xl capitalize flex-grow overflow-hidden"
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
       variants={containerVariants}
@@ -112,7 +114,7 @@ const DropdownMenu = () => {
           {navs.map((nav, i) => (
             <motion.div key={nav} className="relative">
               <motion.div
-                className="absolute bottom-0 left-0 h-1 bg-slate-100"
+                className="absolute bg-[rgba(213,208,202,0.2)] h-[1px] bottom-0 left-0 right-0"
                 variants={underlineVariants}
               />
               <motion.div variants={navItemVariants}>
