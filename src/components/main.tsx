@@ -22,7 +22,7 @@ const Main = ({ children, ...props }: any) => {
 
   return (
     <motion.main
-      className="flex-grow flex flex-col bg-green-950"
+      className="flex-grow flex flex-col bg-green-50"
       initial="closed"
       animate={isOpen ? 'open' : 'closed'}
       variants={variants}

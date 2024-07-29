@@ -1,6 +1,6 @@
 'use client';
 import { useMenu } from '@/contexts/MenuContext';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence, delay } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { Footer } from './footer';
 import { navs } from '@/data/headerNavLinks';
@@ -29,6 +29,7 @@ const DropdownMenu = () => {
       transition: {
         duration: 0.75,
         ease: 'easeInOut',
+        when: 'afterChildren',
       },
     },
   };
@@ -40,6 +41,7 @@ const DropdownMenu = () => {
         duration: 0.75,
         ease: 'easeInOut',
         staggerChildren: 0.1,
+        delayChildren: 0.3, // Delay children to allow underline to animate first
       },
     },
     closed: {
@@ -49,6 +51,7 @@ const DropdownMenu = () => {
         ease: 'easeInOut',
         staggerChildren: 0.05,
         staggerDirection: -1,
+        when: 'afterChildren',
       },
     },
   };
@@ -58,14 +61,17 @@ const DropdownMenu = () => {
       y: 0,
       opacity: 1,
       transition: {
-        y: { stiffness: 1000, velocity: -100 },
+        y: { type: 'spring', stiffness: 300, damping: 24 },
+        opacity: { duration: 0.2 },
       },
     },
     closed: {
       y: 50,
       opacity: 0,
       transition: {
-        y: { stiffness: 1000 },
+        delay: 0.2,
+        y: { type: 'spring', stiffness: 300, damping: 24 },
+        opacity: { duration: 0.2 },
       },
     },
   };
@@ -81,8 +87,20 @@ const DropdownMenu = () => {
     closed: {
       width: '0%',
       transition: {
+        duration: 0.2,
+        ease: 'easeInOut',
+      },
+    },
+  };
+
+  const div = {
+    open: {},
+    closed: {
+      transition: {
         duration: 0.5,
         ease: 'easeInOut',
+        staggerDirection: 1,
+        when: 'afterChildren',
       },
     },
   };
@@ -94,30 +112,28 @@ const DropdownMenu = () => {
 
   return (
     <motion.div
-      className="bg-[#121011] text-slate-100 text-5xl md:text-7xl capitalize dark:bg-[#edefee]"
-      initial="closed"
+      className="bg-[#121011]   text-slate-100 text-4xl md:text-7xl capitalize flex-grow   overflow-hidden"
+      initial={false}
       animate={isOpen ? 'open' : 'closed'}
       variants={containerVariants}
     >
       <motion.div
         variants={dropdownVariants}
-        className="flex flex-col h-full px-[3rem] bg-yellow-500 md:flex-row justify-between"
+        className="flex flex-col h-full px-[3rem] md:flex-row justify-between"
       >
         <motion.div className="flex flex-col justify-evenly w-full h-full">
           {navs.map((nav, i) => (
-            <motion.div
-              key={nav}
-              variants={navItemVariants}
-              className="relative"
-            >
-              <Link className="button flex items-center" href={`/${nav}`}>
-                <span>{nav}</span>
-                <span className="text-2xl ml-4">{toRoman(i + 1)}</span>
-              </Link>
+            <motion.div variants={div} key={nav} className="relative">
               <motion.div
                 className="absolute bottom-0 left-0 h-1 bg-slate-100"
                 variants={underlineVariants}
               />
+              <motion.div variants={navItemVariants}>
+                <Link className="button flex items-center" href={`/${nav}`}>
+                  <span>{nav}</span>
+                  <span className="text-2xl ml-4">{toRoman(i + 1)}</span>
+                </Link>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>

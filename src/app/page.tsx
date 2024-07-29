@@ -14,7 +14,7 @@ const Page = ({ children, ...props }: any) => {
   return (
     <section className="flex px-4 min-h-screen flex-col">
       <Header />
-      <div className="overflow-hidden flex-grow flex-col flex bg-yellow-300 rounded-xl">
+      <div className="overflow-hidden  flex-col flex rounded-xl">
         <DropdownMenu />
         <Main>{children}</Main>
       </div>
