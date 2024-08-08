@@ -1,66 +1,75 @@
-/* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import Image from "next/image"
+import Link from "next/link"
+import { formatDate } from "@/lib/utils"
+import { getPlaiceholder } from 'plaiceholder'
+import fs from 'fs'
+import path from 'path'
 
-const PostCard = ({ post }) => {
-  return (
-    <div role="listitem" className="blog-item w-dyn-item">
-      <div className="blog-container">
-        <div className="blog-inner">
-          <div className="blog-img">
-            <img
-              src="https://cdn.prod.website-files.com/620bcfdc511af7b26c628c0a/66a4eafcab07bc7970bf0341_thumb-small-last.png"
-              loading="lazy"
-              alt=""
-              sizes="(max-width: 479px) 85vw, (max-width: 767px) 35vw, (max-width: 991px) 36vw, 20vw"
-              srcSet="
-                https://cdn.prod.website-files.com/620bcfdc511af7b26c628c0a/66a4eafcab07bc7970bf0341_thumb-small-last-p-500.png 500w,
-                https://cdn.prod.website-files.com/620bcfdc511af7b26c628c0a/66a4eafcab07bc7970bf0341_thumb-small-last.png 572w
-              "
-              className="img big"
-            />
-          </div>
-          <div className="blog-box">
-            <div className="blog-head">
-              <div className="blog-date">
-                <div className="text eyebrow var">Jul, 2024</div>
-              </div>
-              <div className="blog-title">
-                <h5 className="h-h5 var">{post.title}</h5>
-              </div>
-              <a
-                rel="noopener"
-                draggable="false"
-                data-w-id="6ab8d580-8390-6478-0b40-3becf6e6dc8d"
-                href="/blog/the-strategic-importance-of-grs-certification-in-the-footwear-industry"
-                className="cta-link discover w-inline-block"
-              >
-                <div className="cta-inner w-clearfix">
-                  <div className="cta-text discover">
-                    <div className="text var small white">Discover</div>
-                  </div>
-                  <div className="cta-img">
-                    <img
-                      src="https://cdn.prod.website-files.com/620bb93b7e6991ab6e88d1bb/6214bdd6f7980d9c7c782eea_arrow.svg"
-                      alt=""
-                      className="img"
-                    />
-                  </div>
-                </div>
-                <div className="cta-bg" style={{}}></div>
-              </a>
-              <link
-                rel="prerender"
-                href="/blog/the-strategic-importance-of-grs-certification-in-the-footwear-industry"
-              />
-            </div>
-            <div className="blog-desc">
-              <div className="text var small">{post.summary}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+interface Post {
+  key: string
+  title: string
+  coverImage?: string
+  summary?: string
+  date?: string
+  slug: string
+}
+
+interface PostcardProps {
+  post: Post
+  image: string
+}
+
+const getImage = async (src: string) => {
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'images', 'blog', src);
+    const buffer = await fs.promises.readFile(filePath);
+    const {
+      metadata: { height, width },
+      ...plaiceholder
+    } = await getPlaiceholder(buffer, { size: 10 });
+    return {
+      ...plaiceholder,
+      img: { src: `/images/blog${src}`, height, width },
+    };
+  } catch (error) {
+    console.error('Error fetching image:', error);
+    return {
+      base64: '',
+      img: { src: '', height: 0, width: 0 },
+    };
+  }
 };
 
-export default PostCard;
+const Postcard: React.FC<PostcardProps> = async ({ post, image }) => {
+  const { base64, img } = await getImage(image);
+  return (
+    <article className="group relative flex flex-col space-y-2">
+      {image && (
+        <Image
+          src={`${img.src}`}
+          placeholder="blur"
+          {...img}
+          blurDataURL={base64}
+          alt={post.title}
+          width={804}
+          height={452}
+          className="rounded-md border bg-muted transition-colors"
+        />
+      )}
+      <h2 className="text-2xl font-extrabold">{post.title}</h2>
+      {post.summary && (
+        <p className="text-muted-foreground">{post.summary}</p>
+      )}
+      {post.date && (
+        <p className="text-sm text-muted-foreground">
+          {formatDate(post.date)}
+        </p>
+      )}
+      <Link href={post.slug} className="absolute inset-0">
+        <span className="sr-only">View Article</span>
+      </Link>
+    </article>
+  )
+}
+
+export default Postcard

@@ -109,7 +109,8 @@ export default function RootLayout({
       />
 
       <body className={`min-h-screen`}>
-        <MenuProvider>{children}</MenuProvider>
+        <ThemeProvider>
+        <MenuProvider>{children}</MenuProvider></ThemeProvider>
       </body>
     </html>
   );

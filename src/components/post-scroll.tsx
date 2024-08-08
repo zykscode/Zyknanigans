@@ -3,11 +3,11 @@ import PostCard from './post-card';
 
 const BlogPostScroll = ({ posts }) => {
   return (
-    <div className="flex flex-col md:flex-row">
-      <div className="h1">Posts</div>
+     <div className="container max-w-4xl py-6 lg:py-10">
+    
       <div className="flex flex-col">
         {posts.map((post, index) => (
-          <PostCard post={post} key={index} />
+          <PostCard post={post} image={post.coverImage} key={post.title} />
         ))}
       </div>
     </div>

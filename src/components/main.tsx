@@ -1,13 +1,11 @@
 'use client';
 
-import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer';
-import { allPosts } from 'contentlayer/generated';
+
 import { delay, motion } from 'framer-motion';
 import { useMenu } from '@/contexts/MenuContext';
 
 const Main = ({ children, ...props }: any) => {
-  const sortedPosts = sortPosts(allPosts);
-  const posts = allCoreContent(sortedPosts);
+  
 
   const { isOpen, toggleOpen } = useMenu();
 
