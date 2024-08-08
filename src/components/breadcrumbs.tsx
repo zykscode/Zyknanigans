@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
+
 import PageLogo from './page-logo';
 
 const Breadcrumbs = () => {
- 
   return (
     <Link href={'/'} className="breadcrumbs h-12 w-12 cursor-pointer">
       <div className="breadcrumb active cursor-pointer">

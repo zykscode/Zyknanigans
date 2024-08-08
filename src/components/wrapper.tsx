@@ -1,6 +1,6 @@
-import Header from '@/components/header';
 import DropdownMenu from '@/components/dropdown';
 import { Footer } from '@/components/footer';
+import Header from '@/components/header';
 import Main from '@/components/main';
 
 const Wrapper = ({ children, ...props }: any) => {

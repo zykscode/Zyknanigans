@@ -1,8 +1,9 @@
-import { author, github } from '@/data/siteMetadata';
 import Link from 'next/link';
-import styles from '@/components/styles.module.css';
 import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
+
+import styles from '@/components/styles.module.css';
 import { siteConfig } from '@/config/site';
+import { author, github } from '@/data/siteMetadata';
 
 export default function NotFound() {
   const { twitter, github, youtube } = siteConfig.links;

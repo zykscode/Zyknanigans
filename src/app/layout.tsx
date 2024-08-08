@@ -1,14 +1,16 @@
+import '@/styles/globals.css';
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '@/styles/globals.css';
-import siteMetadata from '@/data/siteMetadata';
-import { Footer } from '@/components/footer';
-import { ThemeProvider } from '@/components/theme-provider';
-import Header from '@/components/header';
-import { MenuProvider } from '@/contexts/MenuContext';
+
 import DropdownMenu from '@/components/dropdown';
-import { WhyteInktrap, cn } from '@/lib/utils';
+import { Footer } from '@/components/footer';
+import Header from '@/components/header';
 import Main from '@/components/main';
+import { ThemeProvider } from '@/components/theme-provider';
+import { MenuProvider } from '@/contexts/MenuContext';
+import siteMetadata from '@/data/siteMetadata';
+import { cn, WhyteInktrap } from '@/lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -110,7 +112,8 @@ export default function RootLayout({
 
       <body className={`min-h-screen`}>
         <ThemeProvider>
-        <MenuProvider>{children}</MenuProvider></ThemeProvider>
+          <MenuProvider>{children}</MenuProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

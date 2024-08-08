@@ -1,9 +1,10 @@
 import React from 'react';
+
 import PostCard from './post-card';
 
 const BlogPostScroll = ({ posts }) => {
   // Create a new array where each post is repeated 5 times
-  const extendedPosts = posts.flatMap(post => Array(5).fill(post));
+  const extendedPosts = posts.flatMap((post) => Array(5).fill(post));
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10">

@@ -1,11 +1,13 @@
 'use client';
 
-import React from 'react';
-import Breadcrumbs from './breadcrumbs';
-import Navs from './navs';
-import { ModeToggle } from './mode-toggle';
 import { motion } from 'framer-motion';
+import React from 'react';
+
 import { useMenu } from '@/contexts/MenuContext';
+
+import Breadcrumbs from './breadcrumbs';
+import { ModeToggle } from './mode-toggle';
+import Navs from './navs';
 
 const Header = () => {
   const { isOpen, toggleOpen } = useMenu();

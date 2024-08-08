@@ -60,15 +60,10 @@
       "document": {
         "title": "An Army of Agents",
         "date": "2024-05-07T00:00:00.000Z",
-        "tags": [
-          "AI",
-          "Tech"
-        ],
+        "tags": ["AI", "Tech"],
         "draft": false,
         "summary": "An approachable introduction to AI agents and why they're likely to be the most impactful technology of our generation.",
-        "authors": [
-          "John Doe"
-        ],
+        "authors": ["John Doe"],
         "layout": "post",
         "coverImage": "/ai-agents.jpg",
         "body": {
@@ -130,18 +125,10 @@
       "document": {
         "title": "ChatGPT Twitter Bot: Lessons from over 100k Conversations",
         "date": "2023-02-04T00:00:00.000Z",
-        "tags": [
-          "OSS",
-          "AI",
-          "Twitter",
-          "Projects",
-          "TypeScript"
-        ],
+        "tags": ["OSS", "AI", "Twitter", "Projects", "TypeScript"],
         "draft": false,
         "summary": "A breakdown of everything I've learned running the ChatGPT twitter bot over the past two months.",
-        "authors": [
-          "Jane Smith"
-        ],
+        "authors": ["Jane Smith"],
         "layout": "post",
         "coverImage": "/chatgpt-twitter-bot.jpg",
         "body": {

@@ -1,11 +1,13 @@
 'use client';
 
-import { useMenu } from '@/contexts/MenuContext';
-import { motion, AnimatePresence, delay } from 'framer-motion';
-import React, { useEffect } from 'react';
-import { Footer } from './footer';
-import { navs } from '@/data/headerNavLinks';
+import { AnimatePresence, delay, motion } from 'framer-motion';
 import Link from 'next/link';
+import React, { useEffect } from 'react';
+
+import { useMenu } from '@/contexts/MenuContext';
+import { navs } from '@/data/headerNavLinks';
+
+import { Footer } from './footer';
 
 const DropdownMenu = () => {
   const { isOpen, toggleOpen } = useMenu();
@@ -65,7 +67,7 @@ const DropdownMenu = () => {
       opacity: 1,
       transition: {
         y: { type: 'spring', stiffness: 300, damping: 24 },
-        opacity: { duration: 0.3, delay:0.2 },
+        opacity: { duration: 0.3, delay: 0.2 },
       },
     },
     closed: {

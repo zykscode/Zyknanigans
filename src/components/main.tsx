@@ -1,12 +1,10 @@
 'use client';
 
-
 import { delay, motion } from 'framer-motion';
+
 import { useMenu } from '@/contexts/MenuContext';
 
 const Main = ({ children, ...props }: any) => {
-  
-
   const { isOpen, toggleOpen } = useMenu();
 
   const variants = {

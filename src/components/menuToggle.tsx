@@ -1,5 +1,5 @@
+import { motion, SVGMotionProps } from 'framer-motion';
 import React from 'react';
-import { SVGMotionProps, motion } from 'framer-motion';
 
 const Path = (
   props: React.JSX.IntrinsicAttributes &

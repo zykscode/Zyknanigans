@@ -1,4 +1,4 @@
-import type { LucideProps } from 'lucide-react'
+import type { LucideProps } from 'lucide-react';
 
 export const Icons = {
   sun: ({ ...props }: LucideProps) => (
@@ -62,4 +62,4 @@ export const Icons = {
       ></path>
     </svg>
   ),
-}
+};

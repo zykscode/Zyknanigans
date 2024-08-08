@@ -1,7 +1,6 @@
-'use client'
-import { useEffect, useRef } from 'react';
+'use client';
 import { motion } from 'framer-motion';
-
+import { useEffect, useRef } from 'react';
 
 export default function ParallaxSection() {
   const mainDivRef = useRef(null);

@@ -1,8 +1,8 @@
-'use client'
-import { useEffect, useRef, RefObject } from 'react';
+'use client';
+import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import Lenis from '@studio-freight/lenis';
+import { RefObject, useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,7 +48,7 @@ export function useScrollEffect(): ScrollEffectResult {
           const cardsTotalHeight = cardsContainer.scrollHeight;
           const scrollDistance = cardsTotalHeight - imageHeight;
 
-          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+          ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
           gsap.to(cardsContainer, {
             y: -scrollDistance,
@@ -70,7 +70,7 @@ export function useScrollEffect(): ScrollEffectResult {
 
         return () => {
           window.removeEventListener('resize', updateAnimation);
-          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+          ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
       }
     };

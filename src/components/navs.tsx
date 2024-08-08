@@ -1,10 +1,12 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
-import { MenuToggle } from './menuToggle';
+
 import { navs } from '@/data/headerNavLinks';
-import { motion } from 'framer-motion';
+
+import { MenuToggle } from './menuToggle';
 import NavLink from './nav-links';
 
 const variants = {
@@ -26,7 +28,6 @@ const variants = {
 };
 
 const Navs = ({ toggle }) => {
-
   return (
     <nav className="text-md uppercase w-1/2 justify-between breadcrumbs">
       <div className="flex w-full justify-evenly">

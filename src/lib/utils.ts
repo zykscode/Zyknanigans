@@ -1,6 +1,6 @@
 // utils/customFonts.js
-import localFont from 'next/font/local';
 import { type ClassValue, clsx } from 'clsx';
+import localFont from 'next/font/local';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -103,12 +103,11 @@ export const WhyteInktrap = localFont({
   variable: '--font-whyteinktrap',
 });
 
-
 export function formatDate(input: string | number): string {
-  const date = new Date(input)
-  return date.toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  })
+  const date = new Date(input);
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
 }

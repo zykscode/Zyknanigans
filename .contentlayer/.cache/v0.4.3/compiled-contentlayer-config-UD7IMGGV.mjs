@@ -141,25 +141,25 @@ import {
   makeSource
 } from "contentlayer2/source-files";
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import path from "path";
-import readingTime from "reading-time";
 import { slug } from "github-slugger";
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
+import path from "path";
+import {
+  extractTocHeadings,
+  remarkCodeTitles,
+  remarkExtractFrontmatter,
+  remarkImgToJsx
+} from "pliny/mdx-plugins/index.js";
 import { allCoreContent, sortPosts } from "pliny/utils/contentlayer.js";
+import readingTime from "reading-time";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeCitation from "rehype-citation";
+import rehypeKatex from "rehype-katex";
+import rehypePresetMinify from "rehype-preset-minify";
+import rehypePrismPlus from "rehype-prism-plus";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import {
-  remarkExtractFrontmatter,
-  remarkCodeTitles,
-  remarkImgToJsx,
-  extractTocHeadings
-} from "pliny/mdx-plugins/index.js";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeKatex from "rehype-katex";
-import rehypeCitation from "rehype-citation";
-import rehypePrismPlus from "rehype-prism-plus";
-import rehypePresetMinify from "rehype-preset-minify";
 var root = process.cwd();
 var isProduction = process.env.NODE_ENV === "production";
 var tagColorsPath = path.join(root, "data/tagColors.json");
@@ -233,22 +233,14 @@ function createTagCount(allPosts) {
       file.tags.forEach((tag) => {
         const formattedTag = slug(tag);
         if (formattedTag in tagCount) {
-          tagCount[formattedTag].count += 1;
+          tagCount[formattedTag] += 1;
         } else {
-          tagCount[formattedTag] = {
-            name: tag,
-            count: 1,
-            color: tag.color || getRandomColor(),
-            img: `/images/tags/${tag.toLowerCase()}.jpg`
-          };
+          tagCount[formattedTag] = 1;
         }
       });
     }
   });
-  writeFileSync(
-    "./src/app/tag-data.json",
-    JSON.stringify(Object.values(tagCount), null, 2)
-  );
+  writeFileSync("./src/app/tag-data.json", JSON.stringify(tagCount));
 }
 function createSearchIndex(allPosts) {
   if (import_siteMetadata.default?.search?.provider === "kbar" && import_siteMetadata.default.search.kbarConfig.searchDocumentsPath) {
@@ -373,4 +365,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-J2ZQWVTD.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-UD7IMGGV.mjs.map

@@ -1,8 +1,9 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { Button } from './ui/button';
+
 import { Icons } from './icons';
+import { Button } from './ui/button';
 
 export function ModeToggle() {
   const { setTheme, theme } = useTheme();

@@ -1,8 +1,10 @@
 'use client';
 import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
-import styles from './styles.module.css';
+
 import { siteConfig } from '@/config/site';
+
 import { ModeToggle } from './mode-toggle';
+import styles from './styles.module.css';
 
 const author = 'zykson';
 

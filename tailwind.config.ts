@@ -55,7 +55,7 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-     
+
         'custom-light-grey': 'rgba(213, 208, 202, .6)',
       },
       inset: {

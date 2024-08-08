@@ -16,7 +16,7 @@
   "layout": "post",
   "coverImage": "/chatgpt-twitter-bot.jpg",
   "body": {
-    "raw": "# An Introduction to MDX\n\nMDX is a format that lets you seamlessly use JSX in your Markdown documents. This makes it possible to use React components within Markdown content, allowing for a powerful combination of documentation and interactive examples.\n\n## Why Use MDX?\n\nUsing MDX provides several benefits:\n- **Interactive Content**: Embed interactive components and visualizations directly within your Markdown.\n- **Component Reusability**: Reuse React components across multiple Markdown files.\n- **Dynamic Content**: Generate dynamic content using JavaScript and React within Markdown.\n\n## Getting Started\n\nTo start using MDX whahala wa sha in your project, you can follow these steps:\n\n1. **Install MDX Dependencies**:\n   ```bash\n   npm install @mdx-js/react\n",
+    "raw": "\n# An Introduction to MDX\n\nMDX is a format that lets you seamlessly use JSX in your Markdown documents. This makes it possible to use React components within Markdown content, allowing for a powerful combination of documentation and interactive examples.\n\n## Why Use MDX?\n\nUsing MDX provides several benefits:\n\n- **Interactive Content**: Embed interactive components and visualizations directly within your Markdown.\n- **Component Reusability**: Reuse React components across multiple Markdown files.\n- **Dynamic Content**: Generate dynamic content using JavaScript and React within Markdown.\n\n## Getting Started\n\nTo start using MDX whahala wa sha in your project, you can follow these steps:\n\n1. **Install MDX Dependencies**:\n   ```bash\n   npm install @mdx-js/react\n   ```\n",
     "code": "var Component=(()=>{var m=Object.create;var r=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,w=Object.prototype.hasOwnProperty;var f=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),v=(t,e)=>{for(var a in e)r(t,a,{get:e[a],enumerable:!0})},s=(t,e,a,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let l of u(e))!w.call(t,l)&&l!==a&&r(t,l,{get:()=>e[l],enumerable:!(i=p(e,l))||i.enumerable});return t};var x=(t,e,a)=>(a=t!=null?m(g(t)):{},s(e||!t||!t.__esModule?r(a,\"default\",{value:t,enumerable:!0}):a,t)),M=t=>s(r({},\"__esModule\",{value:!0}),t);var c=f((b,o)=>{o.exports=_jsx_runtime});var k={};v(k,{default:()=>h,frontmatter:()=>y});var n=x(c()),y={title:\"ChatGPT Twitter Bot: Lessons from over 100k Conversations\",date:\"2023-02-04\",tags:[\"OSS\",\"AI\",\"Twitter\",\"Projects\",\"TypeScript\"],summary:\"A breakdown of everything I've learned running the ChatGPT twitter bot over the past two months.\",draft:!1,authors:[\"Jane Smith\"],layout:\"post\",coverImage:\"/chatgpt-twitter-bot.jpg\"};function d(t){let e={a:\"a\",code:\"code\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",path:\"path\",pre:\"pre\",span:\"span\",strong:\"strong\",svg:\"svg\",ul:\"ul\",...t.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{className:\"content-header\",id:\"an-introduction-to-mdx\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#an-introduction-to-mdx\",tabIndex:\"-1\",children:(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(e.span,{className:\"content-header-link\",children:(0,n.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,n.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,n.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 1 0 0 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"An Introduction to MDX\"]}),(0,n.jsx)(e.p,{children:\"MDX is a format that lets you seamlessly use JSX in your Markdown documents. This makes it possible to use React components within Markdown content, allowing for a powerful combination of documentation and interactive examples.\"}),(0,n.jsxs)(e.h2,{className:\"content-header\",id:\"why-use-mdx\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#why-use-mdx\",tabIndex:\"-1\",children:(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(e.span,{className:\"content-header-link\",children:(0,n.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,n.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,n.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 1 0 0 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Why Use MDX?\"]}),(0,n.jsx)(e.p,{children:\"Using MDX provides several benefits:\"}),(0,n.jsxs)(e.ul,{children:[(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Interactive Content\"}),\": Embed interactive components and visualizations directly within your Markdown.\"]}),(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Component Reusability\"}),\": Reuse React components across multiple Markdown files.\"]}),(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Dynamic Content\"}),\": Generate dynamic content using JavaScript and React within Markdown.\"]})]}),(0,n.jsxs)(e.h2,{className:\"content-header\",id:\"getting-started\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#getting-started\",tabIndex:\"-1\",children:(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(e.span,{className:\"content-header-link\",children:(0,n.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,n.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,n.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 1 0 0 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Getting Started\"]}),(0,n.jsx)(e.p,{children:\"To start using MDX whahala wa sha in your project, you can follow these steps:\"}),(0,n.jsx)(e.ol,{children:(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Install MDX Dependencies\"}),\":\",(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line\",children:[(0,n.jsx)(e.span,{className:\"function token\",children:\"npm\"}),\" \",(0,n.jsx)(e.span,{className:\"function token\",children:\"install\"}),` @mdx-js/react\n`]})})})]})})]})}function h(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,{...t,children:(0,n.jsx)(d,{...t})}):d(t)}return M(k);})();\n;return Component;"
   },
   "_id": "blog/post2.mdx",
@@ -30,9 +30,9 @@
   "type": "Post",
   "readingTime": {
     "text": "1 min read",
-    "minutes": 0.545,
-    "time": 32700,
-    "words": 109
+    "minutes": 0.55,
+    "time": 33000,
+    "words": 110
   },
   "slug": "post2",
   "path": "blog/post2",
@@ -40,17 +40,17 @@
   "toc": [
     {
       "value": "An Introduction to MDX",
-      "url": "#an-introduction-to-mdx-1",
+      "url": "#an-introduction-to-mdx-9",
       "depth": 1
     },
     {
       "value": "Why Use MDX?",
-      "url": "#why-use-mdx-1",
+      "url": "#why-use-mdx-9",
       "depth": 2
     },
     {
       "value": "Getting Started",
-      "url": "#getting-started-1",
+      "url": "#getting-started-9",
       "depth": 2
     }
   ],
