@@ -49,41 +49,38 @@ const securityHeaders = [
  **/
 module.exports = async () => {
   const { withContentlayer } = await import('next-contentlayer2');
-  const withPlaiceholder = (await import('@plaiceholder/next')).default;
 
   return withContentlayer(
-    withPlaiceholder(
-      withBundleAnalyzer({
-        reactStrictMode: true,
-        pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-        eslint: {
-          dirs: ['app', 'components', 'layouts', 'scripts'],
-        },
-        images: {
-          remotePatterns: [
-            {
-              protocol: 'https',
-              hostname: 'zykson.vercel.app',
-            },
-          ],
-        },
-        async headers() {
-          return [
-            {
-              source: '/(.*)',
-              headers: securityHeaders,
-            },
-          ];
-        },
-        webpack: (config, options) => {
-          config.module.rules.push({
-            test: /\.svg$/,
-            use: ['@svgr/webpack'],
-          });
+    withBundleAnalyzer({
+      reactStrictMode: true,
+      pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+      eslint: {
+        dirs: ['app', 'components', 'layouts', 'scripts'],
+      },
+      images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'zykson.vercel.app',
+          },
+        ],
+      },
+      async headers() {
+        return [
+          {
+            source: '/(.*)',
+            headers: securityHeaders,
+          },
+        ];
+      },
+      webpack: (config, options) => {
+        config.module.rules.push({
+          test: /\.svg$/,
+          use: ['@svgr/webpack'],
+        });
 
-          return config;
-        },
-      }),
-    ),
+        return config;
+      },
+    }),
   );
 };
