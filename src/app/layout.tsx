@@ -12,7 +12,6 @@ import { MenuProvider } from '@/contexts/MenuContext';
 import siteMetadata from '@/data/siteMetadata';
 import { cn, WhyteInktrap } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),

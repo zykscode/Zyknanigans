@@ -29,7 +29,6 @@ export type Authors = {
   path: string
   filePath: string
   toc: json
-  tagColors: json
 }
 
 export type Post = {
@@ -56,7 +55,6 @@ export type Post = {
   path: string
   filePath: string
   toc: json
-  tagColors: json
   structuredData: json
 }  
 

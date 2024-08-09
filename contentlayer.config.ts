@@ -1,9 +1,12 @@
+/* eslint-disable unused-imports/no-unused-vars-ts */
+/* eslint-disable unused-imports/no-unused-imports-ts */
+
 import {
   ComputedFields,
   defineDocumentType,
   makeSource,
 } from 'contentlayer2/source-files';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { slug } from 'github-slugger';
 import { fromHtmlIsomorphic } from 'hast-util-from-html-isomorphic';
 import path from 'path';
@@ -30,26 +33,6 @@ import siteMetadata from './src/data/siteMetadata';
 const root = process.cwd();
 const isProduction = process.env.NODE_ENV === 'production';
 
-// Tag colors
-const tagColorsPath = path.join(root, 'data/tagColors.json');
-const tagColors = existsSync(tagColorsPath)
-  ? JSON.parse(readFileSync(tagColorsPath, 'utf8'))
-  : {};
-
-const colors = [
-  'blue',
-  'orange',
-  'green',
-  'pink',
-  'brown',
-  'red',
-  'yellow',
-  'purple',
-  'gray',
-];
-
-const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
-
 const computedFields: ComputedFields = {
   readingTime: {
     type: 'json',
@@ -71,50 +54,30 @@ const computedFields: ComputedFields = {
     type: 'json',
     resolve: (doc) => extractTocHeadings(doc.body.raw),
   },
-  tagColors: {
-    type: 'json',
-    resolve: (doc) => {
-      const newTagColors = {};
-      if (Array.isArray(doc.tags)) {
-        doc.tags.forEach((tag) => {
-          if (!tagColors[tag.name]) {
-            tagColors[tag.name] = tag.color || getRandomColor();
-          }
-          if (!newTagColors[tag.name]) {
-            newTagColors[tag.name] = {
-              name: tag.name,
-              color: tagColors[tag.name],
-              count: 0,
-            };
-          }
-          newTagColors[tag.name].count += 1;
-        });
-        if (Object.keys(newTagColors).length > 0) {
-          writeFileSync(tagColorsPath, JSON.stringify(tagColors, null, 2));
-        }
-        return Object.values(newTagColors);
-      } else {
-        console.error('Tags is not an array:', doc.tags);
-        return [];
-      }
-    },
-  },
 };
 
 /**
  * Count the occurrences of all tags across blog posts and write to json file
- */ function createTagCount(allPosts) {
+ */
+
+function createTagCount(allPosts) {
   const tagCount: Record<string, number> = {};
   allPosts.forEach((file) => {
     if (file.tags && (!isProduction || file.draft !== true)) {
-      file.tags.forEach((tag) => {
-        const formattedTag = slug(tag);
-        if (formattedTag in tagCount) {
-          tagCount[formattedTag] += 1;
-        } else {
-          tagCount[formattedTag] = 1;
-        }
-      });
+      let tags = file.tags;
+
+      // Convert tags to array if it's an object
+      if (typeof tags === 'object' && !Array.isArray(tags)) {
+        tags = Object.keys(tags);
+      }
+
+      if (Array.isArray(tags)) {
+        tags.forEach((tag) => {
+          const tagName = typeof tag === 'string' ? tag : tag.name;
+          const formattedTag = slug(tagName);
+          tagCount[formattedTag] = (tagCount[formattedTag] || 0) + 1;
+        });
+      }
     }
   });
   writeFileSync('./src/app/tag-data.json', JSON.stringify(tagCount));

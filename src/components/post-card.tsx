@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { promises } from 'fs';
 import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
@@ -23,7 +23,7 @@ interface PostcardProps {
 const getImage = async (src: string) => {
   try {
     const filePath = path.join(process.cwd(), 'public', 'images', 'blog', src);
-    const buffer = await fs.promises.readFile(filePath);
+    const buffer = await promises.readFile(filePath);
     const {
       metadata: { height, width },
       ...plaiceholder
@@ -47,7 +47,6 @@ const Postcard: React.FC<PostcardProps> = async ({ post, image }) => {
     <article className="group relative flex flex-col space-y-2">
       {image && (
         <Image
-          src={`${img.src}`}
           placeholder="blur"
           {...img}
           blurDataURL={base64}

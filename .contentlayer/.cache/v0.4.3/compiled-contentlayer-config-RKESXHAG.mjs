@@ -140,7 +140,7 @@ import {
   defineDocumentType,
   makeSource
 } from "contentlayer2/source-files";
-import { existsSync, readFileSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 import { slug } from "github-slugger";
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
 import path from "path";
@@ -162,20 +162,6 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 var root = process.cwd();
 var isProduction = process.env.NODE_ENV === "production";
-var tagColorsPath = path.join(root, "data/tagColors.json");
-var tagColors = existsSync(tagColorsPath) ? JSON.parse(readFileSync(tagColorsPath, "utf8")) : {};
-var colors = [
-  "blue",
-  "orange",
-  "green",
-  "pink",
-  "brown",
-  "red",
-  "yellow",
-  "purple",
-  "gray"
-];
-var getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 var computedFields = {
   readingTime: {
     type: "json",
@@ -196,48 +182,23 @@ var computedFields = {
   toc: {
     type: "json",
     resolve: (doc) => extractTocHeadings(doc.body.raw)
-  },
-  tagColors: {
-    type: "json",
-    resolve: (doc) => {
-      const newTagColors = {};
-      if (Array.isArray(doc.tags)) {
-        doc.tags.forEach((tag) => {
-          if (!tagColors[tag.name]) {
-            tagColors[tag.name] = tag.color || getRandomColor();
-          }
-          if (!newTagColors[tag.name]) {
-            newTagColors[tag.name] = {
-              name: tag.name,
-              color: tagColors[tag.name],
-              count: 0
-            };
-          }
-          newTagColors[tag.name].count += 1;
-        });
-        if (Object.keys(newTagColors).length > 0) {
-          writeFileSync(tagColorsPath, JSON.stringify(tagColors, null, 2));
-        }
-        return Object.values(newTagColors);
-      } else {
-        console.error("Tags is not an array:", doc.tags);
-        return [];
-      }
-    }
   }
 };
 function createTagCount(allPosts) {
   const tagCount = {};
   allPosts.forEach((file) => {
     if (file.tags && (!isProduction || file.draft !== true)) {
-      file.tags.forEach((tag) => {
-        const formattedTag = slug(tag);
-        if (formattedTag in tagCount) {
-          tagCount[formattedTag] += 1;
-        } else {
-          tagCount[formattedTag] = 1;
-        }
-      });
+      let tags = file.tags;
+      if (typeof tags === "object" && !Array.isArray(tags)) {
+        tags = Object.keys(tags);
+      }
+      if (Array.isArray(tags)) {
+        tags.forEach((tag) => {
+          const tagName = typeof tag === "string" ? tag : tag.name;
+          const formattedTag = slug(tagName);
+          tagCount[formattedTag] = (tagCount[formattedTag] || 0) + 1;
+        });
+      }
     }
   });
   writeFileSync("./src/app/tag-data.json", JSON.stringify(tagCount));
@@ -365,4 +326,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-UD7IMGGV.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-RKESXHAG.mjs.map

@@ -40,21 +40,20 @@
   "toc": [
     {
       "value": "An Introduction to MDX",
-      "url": "#an-introduction-to-mdx-9",
+      "url": "#an-introduction-to-mdx-1",
       "depth": 1
     },
     {
       "value": "Why Use MDX?",
-      "url": "#why-use-mdx-9",
+      "url": "#why-use-mdx-1",
       "depth": 2
     },
     {
       "value": "Getting Started",
-      "url": "#getting-started-9",
+      "url": "#getting-started-1",
       "depth": 2
     }
   ],
-  "tagColors": [],
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "BlogPosting",

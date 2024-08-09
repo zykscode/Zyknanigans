@@ -33,6 +33,16 @@ module.exports = {
   },
   rules: {
     'no-unused-vars': 'error',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
     'react/no-unescaped-entities': 'off',
     '@next/next/no-img-element': 'warn',
     'react-hooks/exhaustive-deps': [
@@ -82,7 +92,6 @@ module.exports = {
     ],
     'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
-    'react/no-unescaped-entities': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
